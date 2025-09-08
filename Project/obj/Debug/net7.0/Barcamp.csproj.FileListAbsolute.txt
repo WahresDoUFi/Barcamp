@@ -20,3 +20,4 @@ C:\Users\domir\source\repos\Barcamp\Project\obj\Debug\net7.0\refint\Barcamp.dll
 C:\Users\domir\source\repos\Barcamp\Project\obj\Debug\net7.0\Barcamp.pdb
 C:\Users\domir\source\repos\Barcamp\Project\obj\Debug\net7.0\Barcamp.genruntimeconfig.cache
 C:\Users\domir\source\repos\Barcamp\Project\obj\Debug\net7.0\ref\Barcamp.dll
+C:\Users\domir\source\repos\Barcamp\Project\bin\Debug\net7.0\Assets\background.jpg
