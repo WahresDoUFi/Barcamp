@@ -1,4 +1,5 @@
-﻿using Raylib_cs;
+﻿using Barcamp;
+using Raylib_cs;
 
 namespace HelloWorld;
 
@@ -12,13 +13,14 @@ class Program
         backgroundTexture.Height *= 2;
         Raylib.SetTargetFPS(30);
 
+        var scene = new Scene();
+        scene.background = backgroundTexture;
+        var dog = scene.AddSprite(SpriteType.Dog, 0.75f);
         while (!Raylib.WindowShouldClose())
         {
             Raylib.BeginDrawing();
-            Raylib.ClearBackground(Color.White);
 
-            Raylib.DrawTexture(backgroundTexture, 0, 0, Color.White);
-
+            scene.Draw();
             Raylib.EndDrawing();
         }
 
