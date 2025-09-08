@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "USHmiet39OU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\domir\\source\\repos\\Barcamp\\Project\\Barcamp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\domir\\.nuget\\packages\\raylib-cs\\7.0.1\\raylib-cs.7.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
