@@ -26,10 +26,6 @@ namespace Barcamp
             foods.Add(birdFood);
             
             animals.Add(AnimalFactory.CreateDog(scene, dogFood));
-            animals.Add(AnimalFactory.CreateCat(scene, catFood));
-            animals.Add(AnimalFactory.CreateTurtle(scene, turtleFood));
-            animals.Add(AnimalFactory.CreateSnake(scene, snakeFood));
-            animals.Add(AnimalFactory.CreateBird(scene, birdFood));
         }
 
         //  This method will be called every frame
