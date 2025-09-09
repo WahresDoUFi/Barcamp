@@ -5,10 +5,10 @@ namespace Barcamp.Foods
 {
     internal class Birdfood : Food
     {
-        public Birdfood(Scene scene, Action<Food, Vector2> dropCallback) : base(scene.AddSprite(SpriteType.SnakeFood, 0.3f), dropCallback)
+        public Birdfood(Scene scene, Action<Food, Vector2> dropCallback) : base(scene.AddSprite(SpriteType.BirdFood, 0.2f), dropCallback)
         {
-            sprite.X = 200;
-            sprite.Y = 530;
+            sprite.X = 520;
+            sprite.Y = 600;
             filling = 1f;
             amount = 10;
         }
