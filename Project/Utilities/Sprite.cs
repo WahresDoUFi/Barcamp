@@ -95,7 +95,8 @@ namespace Barcamp.Utilities
                 var mousePos = Raylib.GetMousePosition();
                 visualX = (int)mousePos.X;
                 visualY = (int)mousePos.Y;
-            } else
+            }
+            else
             {
                 visualX = (int)X;
                 visualY = (int)Y;
@@ -116,7 +117,8 @@ namespace Barcamp.Utilities
                         return;
                     }
                 }
-            } else if (Raylib.IsMouseButtonReleased(MouseButton.Left))
+            }
+            else if (Raylib.IsMouseButtonReleased(MouseButton.Left))
             {
                 OnDrop?.Invoke(Raylib.GetMousePosition());
                 dragging = false;
