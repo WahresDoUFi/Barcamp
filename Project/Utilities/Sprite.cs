@@ -105,6 +105,11 @@ namespace Barcamp.Utilities
 
         public void CheckDrag()
         {
+            if (visible == false)
+            {
+                dragging = false;
+                return;
+            }
             if (dragging == false)
             {
                 if (Raylib.IsMouseButtonPressed(MouseButton.Left))
