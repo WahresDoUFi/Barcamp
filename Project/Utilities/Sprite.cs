@@ -53,6 +53,11 @@ namespace Barcamp.Utilities
             SetScale(scale);
         }
 
+        public Rectangle GetRect()
+        {
+            return new Rectangle(X, Y, texture.Width, texture.Height);
+        }
+
         public void SetSprite(SpriteType type)
         {
             image = Raylib.LoadImage(paths[type]);
@@ -90,7 +95,8 @@ namespace Barcamp.Utilities
                 var mousePos = Raylib.GetMousePosition();
                 visualX = (int)mousePos.X;
                 visualY = (int)mousePos.Y;
-            } else
+            }
+            else
             {
                 visualX = (int)X;
                 visualY = (int)Y;
@@ -111,7 +117,8 @@ namespace Barcamp.Utilities
                         return;
                     }
                 }
-            } else if (Raylib.IsMouseButtonReleased(MouseButton.Left))
+            }
+            else if (Raylib.IsMouseButtonReleased(MouseButton.Left))
             {
                 OnDrop?.Invoke(Raylib.GetMousePosition());
                 dragging = false;
