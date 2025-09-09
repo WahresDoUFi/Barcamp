@@ -81,8 +81,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="Animals\Cat.cs" />
-  </ItemGroup>
-
 </Project>

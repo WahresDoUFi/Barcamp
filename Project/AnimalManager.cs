@@ -14,10 +14,6 @@ namespace Barcamp
         public override void Start()
         {
             animals.Add(new Dog(scene));
-            animals.Add(new Cat(scene));
-            animals.Add(new Turtle(scene));
-            animals.Add(new Snake(scene));
-            animals.Add(new Bird(scene));
 
             foods.Add(new Snakefood(scene, FoodDropped));
             foods.Add(new Dogfood(scene, FoodDropped));
