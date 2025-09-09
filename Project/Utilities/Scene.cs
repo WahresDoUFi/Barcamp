@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Raylib_cs;
+﻿using Raylib_cs;
 
-namespace Barcamp
+namespace Barcamp.Utilities
 {
     internal class Scene
     {
         public Texture2D background;
 
         private List<Sprite> sprites = new();
+        private readonly AnimalManager _animalManager;
+
+        public Scene()
+        {
+            _animalManager = new AnimalManager() { scene = this };
+            _animalManager.Start();
+        }
 
         public Sprite AddSprite(SpriteType type, float scale = 1f)
         {
@@ -35,6 +37,7 @@ namespace Barcamp
         }
         private void UpdateAll()
         {
+            _animalManager.Update();
             foreach (var sprite in sprites)
             {
                 sprite.CheckDrag();

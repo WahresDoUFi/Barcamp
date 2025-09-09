@@ -8,13 +8,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Animals\bird.png" />
     <None Remove="Assets\Animals\Dog.png" />
+    <None Remove="Assets\Animals\snake.png" />
+    <None Remove="Assets\Animals\turtle.png" />
     <None Remove="Assets\background.jpg" />
+    <EmbeddedResource Include="Assets\Animals\bird.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Assets\Animals\dog.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Remove="Assets\Animals\cat.png" />
     <EmbeddedResource Include="Assets\Animals\cat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Animals\snake.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Animals\turtle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

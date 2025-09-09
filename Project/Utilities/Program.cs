@@ -1,7 +1,6 @@
-﻿using Barcamp;
-using Raylib_cs;
+﻿using Raylib_cs;
 
-namespace HelloWorld;
+namespace Barcamp.Utilities;
 
 class Program
 {
@@ -15,9 +14,6 @@ class Program
 
         var scene = new Scene();
         scene.background = backgroundTexture;
-        
-        var dog = scene.AddSprite(SpriteType.Dog, 0.2f);
-        var cat = scene.AddSprite(SpriteType.Cat, 0.2f);
         
         while (!Raylib.WindowShouldClose())
         {

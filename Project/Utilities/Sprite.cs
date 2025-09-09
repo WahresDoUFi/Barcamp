@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Numerics;
+﻿using System.Numerics;
 using Raylib_cs;
 
-namespace Barcamp
+namespace Barcamp.Utilities
 {
     public enum SpriteType
     {
@@ -34,11 +32,25 @@ namespace Barcamp
         public bool isDraggable;
         private int visualX, visualY;
         private bool dragging;
+
+        private float defaultWidth, defaultHeight;
         public Sprite(SpriteType type, float scale = 1f)
         {
+            SetSprite(type);
+            SetScale(scale);
+        }
+
+        public void SetSprite(SpriteType type)
+        {
             texture = Raylib.LoadTextureFromImage(Raylib.LoadImage(paths[type]));
-            texture.Width = (int)(texture.Width * scale);
-            texture.Height = (int)(texture.Height * scale);
+            defaultWidth = texture.Width;
+            defaultHeight = texture.Height;
+        }
+
+        public void SetScale(float scale)
+        {
+            texture.Width = (int)(defaultWidth * scale);
+            texture.Height = (int)(defaultHeight * scale);
         }
 
         public void Draw()
