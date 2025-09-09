@@ -20,6 +20,9 @@ namespace Barcamp
             animals.Add(new Bird(scene));
 
             foods.Add(new Snakefood(scene, FoodDropped));
+            foods.Add(new Dogfood(scene, FoodDropped));
+            foods.Add(new Catfood(scene, FoodDropped));
+            foods.Add(new Turtlefood(scene, FoodDropped));
         }
 
         //  This method will be called every frame

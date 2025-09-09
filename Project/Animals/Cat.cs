@@ -15,7 +15,7 @@ namespace Barcamp.Animals
         public override void Eat(Food food)
         {
             if (hunger < food.filling) return;
-            if (food is Dogfood dogFood)
+            if (food is Catfood)
             {
                 hunger -= food.Eat();
                 SoundPlayer.Play(SoundType.Meowing);

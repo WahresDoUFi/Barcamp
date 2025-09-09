@@ -5,8 +5,10 @@ namespace Barcamp.Foods
 {
     internal class Dogfood : Food
     {
-        public Dogfood(Scene scene, Action<Food, Vector2> dropCallback) : base(scene.AddSprite(SpriteType.DogFood), dropCallback)
+        public Dogfood(Scene scene, Action<Food, Vector2> dropCallback) : base(scene.AddSprite(SpriteType.DogFood, 0.3f), dropCallback)
         {
+            sprite.X = 750;
+            sprite.Y = 550;
             filling = 1.5f;
             amount = 10;
         }
@@ -19,7 +21,7 @@ namespace Barcamp.Foods
 
         public override void Update()
         {
-            amount += 0.1f;
+            amount += 0.01f;
             sprite.visible = amount >= 1;
         }
     }

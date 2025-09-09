@@ -21,7 +21,7 @@ namespace Barcamp.Foods
 
         public override void Update()
         {
-            amount += 0.1f;
+            amount += 0.01f;
             sprite.visible = amount >= 1;
         }
     }

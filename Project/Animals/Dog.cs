@@ -14,7 +14,7 @@ namespace Barcamp.Animals
 
         public override void Eat(Food food)
         {
-            if (food is Dogfood dogFood)
+            if (food is Dogfood)
             {
                 hunger -= food.Eat();
                 if (hunger < 0)
