@@ -93,8 +93,8 @@ namespace Barcamp.Utilities
             if (dragging && isDraggable)
             {
                 var mousePos = Raylib.GetMousePosition();
-                visualX = (int)mousePos.X;
-                visualY = (int)mousePos.Y;
+                visualX = (int)mousePos.X - (texture.Width / 2);
+                visualY = (int)mousePos.Y - (texture.Height / 2);
             }
             else
             {
