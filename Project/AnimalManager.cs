@@ -1,6 +1,8 @@
 ﻿using System.Numerics;
 using Barcamp.Animals;
+using Barcamp.Foods;
 using Barcamp.Utilities;
+using Raylib_cs;
 
 namespace Barcamp
 {
@@ -16,6 +18,8 @@ namespace Barcamp
             animals.Add(new Turtle(scene));
             animals.Add(new Snake(scene));
             animals.Add(new Bird(scene));
+
+            foods.Add(new Snakefood(scene, FoodDropped));
         }
 
         //  This method will be called every frame
@@ -27,7 +31,13 @@ namespace Barcamp
 
         private void FoodDropped(Food food, Vector2 position)
         {
-
+            foreach (var animal in animals)
+            {
+                if (Raylib.CheckCollisionPointRec(position, animal.GetRect()))
+                {
+                    animal.Eat(food);
+                }
+            }
         }
-    }
+    } 
 }

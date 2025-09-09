@@ -5,7 +5,7 @@ namespace Barcamp.Foods
 {
     internal class Catfood : Food
     {
-        public Catfood(Sprite sprite, Action<Food, Vector2> dropCallback) : base(sprite, dropCallback)
+        public Catfood(Scene scene, Action<Food, Vector2> dropCallback) : base(scene.AddSprite(SpriteType.CatFood), dropCallback)
         {
             filling = 2f;
             amount = 10;

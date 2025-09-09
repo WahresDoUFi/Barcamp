@@ -3,11 +3,13 @@ using Barcamp.Utilities;
 
 namespace Barcamp.Foods
 {
-    internal class Dogfood : Food
+    internal class Snakefood : Food
     {
-        public Dogfood(Scene scene, Action<Food, Vector2> dropCallback) : base(scene.AddSprite(SpriteType.DogFood), dropCallback)
+        public Snakefood(Scene scene, Action<Food, Vector2> dropCallback) : base(scene.AddSprite(SpriteType.SnakeFood, 0.3f), dropCallback)
         {
-            filling = 1.5f;
+            sprite.X = 200;
+            sprite.Y = 530;
+            filling = 1f;
             amount = 10;
         }
 

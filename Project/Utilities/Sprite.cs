@@ -53,6 +53,11 @@ namespace Barcamp.Utilities
             SetScale(scale);
         }
 
+        public Rectangle GetRect()
+        {
+            return new Rectangle(X, Y, texture.Width, texture.Height);
+        }
+
         public void SetSprite(SpriteType type)
         {
             image = Raylib.LoadImage(paths[type]);

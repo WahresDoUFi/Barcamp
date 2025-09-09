@@ -1,4 +1,5 @@
 ﻿using Barcamp.Utilities;
+using Raylib_cs;
 
 namespace Barcamp
 {
@@ -12,6 +13,11 @@ namespace Barcamp
         {
             this.sprite = sprite;
             sprite.OnClick += Pet;
+        }
+
+        public Rectangle GetRect()
+        {
+            return sprite.GetRect();
         }
 
         public abstract void Eat(Food food);
