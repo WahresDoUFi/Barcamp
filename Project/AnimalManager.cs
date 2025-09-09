@@ -45,7 +45,7 @@ namespace Barcamp
             {
                 if (Raylib.CheckCollisionPointRec(position, animal.GetRect()))
                 {
-                    animal.Eat();
+                    animal.Eat(food);
                 }
             }
         }

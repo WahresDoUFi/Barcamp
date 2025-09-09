@@ -14,14 +14,19 @@ public class EatAlways : IEatBehavior
         this.soundType = soundType;
     }
 
-    public void Eat(Animal animal)
+    public void Eat(Animal animal, Food droppedFood)
     {
-            animal.hunger -= food.Eat();
-            if (animal.hunger < 0)
-            {
-                animal.happiness += animal.hunger;
-                animal.hunger = 0;
-            }
-            SoundPlayer.Play(soundType);
+        if (droppedFood.GetType() != food.GetType())
+        {
+            return;
         }
+        
+        animal.hunger -= droppedFood.Eat();
+        if (animal.hunger < 0)
+        {
+            animal.happiness += animal.hunger;
+            animal.hunger = 0;
+        }
+        SoundPlayer.Play(soundType);
+    }
 }

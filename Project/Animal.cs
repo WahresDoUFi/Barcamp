@@ -29,7 +29,7 @@ namespace Barcamp
             return sprite.GetRect();
         }
         
-        public void Eat() => eatBehavior.Eat(this);
+        public void Eat(Food droppedFood) => eatBehavior.Eat(this, droppedFood);
         public void Pet() => petBehavior.Pet(this);
         public void Update() => updateBehavior.Update(this);
     }

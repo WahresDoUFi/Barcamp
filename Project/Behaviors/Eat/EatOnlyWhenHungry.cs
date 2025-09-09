@@ -14,11 +14,14 @@ public class EatOnlyWhenHungry : IEatBehavior
         this.food = food;
         this.soundType = soundType;
     }
-    public void Eat(Animal animal)
+    
+    public void Eat(Animal animal, Food droppedFood)
     {
-        if (animal.hunger < food.filling) return;
-            animal.hunger -= food.Eat();
-            animal.happiness += 1f;
-            SoundPlayer.Play(soundType);
+        if (droppedFood.GetType() != food.GetType()) return;
+        
+        if (animal.hunger < droppedFood.filling) return;
+        animal.hunger -= droppedFood.Eat();
+        animal.happiness += 1f;
+        SoundPlayer.Play(soundType);
     }
 }
