@@ -1,5 +1,4 @@
 ﻿using System.Numerics;
-using Barcamp.Animals;
 using Barcamp.Foods;
 using Barcamp.Utilities;
 using Raylib_cs;
@@ -13,17 +12,24 @@ namespace Barcamp
         //  This method will be called once on loadup
         public override void Start()
         {
-            animals.Add(new Dog(scene));
-            animals.Add(new Cat(scene));
-            animals.Add(new Turtle(scene));
-            animals.Add(new Snake(scene));
-            animals.Add(new Bird(scene));
 
-            foods.Add(new Snakefood(scene, FoodDropped));
-            foods.Add(new Dogfood(scene, FoodDropped));
-            foods.Add(new Catfood(scene, FoodDropped));
-            foods.Add(new Turtlefood(scene, FoodDropped));
-            foods.Add(new Birdfood(scene, FoodDropped));
+            var snakeFood = new Snakefood(scene, FoodDropped);
+            var dogFood   = new Dogfood(scene, FoodDropped);
+            var catFood   = new Catfood(scene, FoodDropped);
+            var turtleFood = new Turtlefood(scene, FoodDropped);
+            var birdFood   = new Birdfood(scene, FoodDropped);
+
+            foods.Add(snakeFood);
+            foods.Add(dogFood);
+            foods.Add(catFood);
+            foods.Add(turtleFood);
+            foods.Add(birdFood);
+            
+            animals.Add(AnimalFactory.CreateDog(scene, dogFood));
+            animals.Add(AnimalFactory.CreateCat(scene, catFood));
+            animals.Add(AnimalFactory.CreateTurtle(scene, turtleFood));
+            animals.Add(AnimalFactory.CreateSnake(scene, snakeFood));
+            animals.Add(AnimalFactory.CreateBird(scene, birdFood));
         }
 
         //  This method will be called every frame
@@ -39,7 +45,7 @@ namespace Barcamp
             {
                 if (Raylib.CheckCollisionPointRec(position, animal.GetRect()))
                 {
-                    animal.Eat(food);
+                    animal.Eat();
                 }
             }
         }

@@ -3,7 +3,7 @@ using Barcamp.Utilities;
 
 namespace Barcamp
 {
-    internal abstract class Food
+    public abstract class Food
     {
         protected Sprite sprite;
         public float filling { get; protected set; }

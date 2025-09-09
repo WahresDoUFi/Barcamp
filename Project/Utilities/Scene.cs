@@ -2,7 +2,7 @@
 
 namespace Barcamp.Utilities
 {
-    internal class Scene
+    public class Scene
     {
         public Texture2D background;
 

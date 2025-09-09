@@ -1,13 +1,22 @@
-﻿using Barcamp.Utilities;
+﻿using Barcamp.Behaviors;
+using Barcamp.Behaviors.Eat;
+using Barcamp.Behaviors.Pet;
+using Barcamp.Behaviors.Update;
+using Barcamp.Utilities;
 using Raylib_cs;
 
 namespace Barcamp
 {
-    internal abstract class Animal
+    public class Animal
     {
-        protected readonly Sprite sprite;
-        protected float hunger;
-        protected float happiness;
+        public float hunger;
+        public float happiness;
+        
+        public readonly Sprite sprite;
+        public required IEatBehavior eatBehavior;
+        public required IPetBehavior petBehavior;
+        public required IUpdateBehavior updateBehavior;
+
 
         public Animal(Sprite sprite)
         {
@@ -19,9 +28,9 @@ namespace Barcamp
         {
             return sprite.GetRect();
         }
-
-        public abstract void Eat(Food food);
-        public abstract void Pet();
-        public abstract void Update();
+        
+        public void Eat() => eatBehavior.Eat(this);
+        public void Pet() => petBehavior.Pet(this);
+        public void Update() => updateBehavior.Update(this);
     }
 }

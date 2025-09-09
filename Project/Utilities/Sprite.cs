@@ -16,7 +16,8 @@ namespace Barcamp.Utilities
         Bird,
         BirdFood
     }
-    internal class Sprite
+
+    public class Sprite
     {
         private static readonly Dictionary<SpriteType, string> paths = new()
         {
