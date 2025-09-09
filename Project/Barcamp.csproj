@@ -9,9 +9,14 @@
 
   <ItemGroup>
     <None Remove="Assets\Animals\bird.png" />
+    <None Remove="Assets\Animals\birdfood.png" />
+    <None Remove="Assets\Animals\catfood.png" />
     <None Remove="Assets\Animals\Dog.png" />
+    <None Remove="Assets\Animals\dogfood.png" />
     <None Remove="Assets\Animals\snake.png" />
+    <None Remove="Assets\Animals\snakefood.png" />
     <None Remove="Assets\Animals\turtle.png" />
+    <None Remove="Assets\Animals\turtlefood.png" />
     <None Remove="Assets\background.jpg" />
     <None Remove="Assets\Sounds\barking.wav" />
     <None Remove="Assets\Sounds\hissing.wav" />
@@ -21,6 +26,12 @@
     <EmbeddedResource Include="Assets\Animals\bird.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Animals\birdfood.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Animals\catfood.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Assets\Animals\dog.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -28,10 +39,19 @@
     <EmbeddedResource Include="Assets\Animals\cat.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Animals\dogfood.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Assets\Animals\snake.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Animals\snakefood.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Assets\Animals\turtle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Animals\turtlefood.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\Sounds\barking.wav">
@@ -59,6 +79,10 @@
     <EmbeddedResource Include="Assets\background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Animals\Cat.cs" />
   </ItemGroup>
 
 </Project>
