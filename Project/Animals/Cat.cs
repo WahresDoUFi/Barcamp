@@ -17,7 +17,8 @@ namespace Barcamp.Animals
             if (hunger < food.filling) return;
             if (food is Dogfood dogFood)
             {
-                hunger -= food.filling;
+                hunger -= food.Eat();
+                food.amount--;
                 SoundPlayer.Play(SoundType.Meowing);
             }
         }

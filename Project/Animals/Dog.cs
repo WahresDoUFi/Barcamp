@@ -16,7 +16,7 @@ namespace Barcamp.Animals
         {
             if (food is Dogfood dogFood)
             {
-                hunger -= food.filling;
+                hunger -= food.Eat();
                 if (hunger < 0)
                 {
                     happiness += hunger;
