@@ -7,6 +7,7 @@ class Program
     public static void Main()
     {
         Raylib.InitWindow(1280, 800, "Tiere");
+        Raylib.InitAudioDevice();
         var backgroundTexture = Raylib.LoadTextureFromImage(Raylib.LoadImage("Assets/background.jpg"));
         backgroundTexture.Width *= 2;
         backgroundTexture.Height *= 2;
@@ -14,7 +15,6 @@ class Program
 
         var scene = new Scene();
         scene.background = backgroundTexture;
-        
         while (!Raylib.WindowShouldClose())
         {
             Raylib.BeginDrawing();

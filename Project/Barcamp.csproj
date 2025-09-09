@@ -13,6 +13,11 @@
     <None Remove="Assets\Animals\snake.png" />
     <None Remove="Assets\Animals\turtle.png" />
     <None Remove="Assets\background.jpg" />
+    <None Remove="Assets\Sounds\barking.wav" />
+    <None Remove="Assets\Sounds\hissing.wav" />
+    <None Remove="Assets\Sounds\meowing.wav" />
+    <None Remove="Assets\Sounds\squeaking.wav" />
+    <None Remove="Assets\Sounds\tweeting.wav" />
     <EmbeddedResource Include="Assets\Animals\bird.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -27,6 +32,21 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\Animals\turtle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Sounds\barking.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Sounds\hissing.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Sounds\meowing.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Sounds\squeaking.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Sounds\tweeting.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
