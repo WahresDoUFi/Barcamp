@@ -16,6 +16,7 @@ namespace Barcamp
         public Sprite AddSprite(SpriteType type, float scale = 1f)
         {
             var sprite = new Sprite(type, scale);
+            sprite.isDraggable = true;
             sprites.Add(sprite);
             return sprite;
         }

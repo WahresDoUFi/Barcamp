@@ -7,14 +7,23 @@ namespace Barcamp
 {
     public enum SpriteType
     {
-        Dog
+        Dog,
+        Cat,
+        Snake,
+        Turtle,
+        Bird
     }
     internal class Sprite
     {
         private static readonly Dictionary<SpriteType, string> paths = new()
         {
-            {SpriteType.Dog, "Assets/Animals/Dog.png" }
+            {SpriteType.Dog, "Assets/Animals/dog.png" },
+            {SpriteType.Cat, "Assets/Animals/cat.png" },
+            {SpriteType.Snake, "Assets/Animals/snake.png" },
+            {SpriteType.Turtle, "Assets/Animals/turtle.png" },
+            {SpriteType.Bird, "Assets/Animals/bird.png" }
         };
+        
         Texture2D texture;
         public float X { get; set; }
         public float Y { get; set; }
@@ -22,8 +31,8 @@ namespace Barcamp
         public event Action? OnClick;
         public event Action<Vector2>? OnDrop;
 
+        public bool isDraggable;
         private int visualX, visualY;
-        protected bool isDraggable;
         private bool dragging;
         public Sprite(SpriteType type, float scale = 1f)
         {
