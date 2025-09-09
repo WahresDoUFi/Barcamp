@@ -6,22 +6,33 @@ namespace Barcamp.Utilities
     public enum SpriteType
     {
         Dog,
+        DogFood,
         Cat,
+        CatFood,
         Snake,
+        SnakeFood,
         Turtle,
-        Bird
+        TurtleFood,
+        Bird,
+        BirdFood
     }
     internal class Sprite
     {
         private static readonly Dictionary<SpriteType, string> paths = new()
         {
             {SpriteType.Dog, "Assets/Animals/dog.png" },
+            {SpriteType.DogFood, "Assets/Animals/dogfood.png" },
             {SpriteType.Cat, "Assets/Animals/cat.png" },
+            {SpriteType.CatFood, "Assets/Animals/catfood.png" },
             {SpriteType.Snake, "Assets/Animals/snake.png" },
+            {SpriteType.SnakeFood, "Assets/Animals/snakefood.png" },
             {SpriteType.Turtle, "Assets/Animals/turtle.png" },
-            {SpriteType.Bird, "Assets/Animals/bird.png" }
+            {SpriteType.TurtleFood, "Assets/Animals/turtlefood.png" },
+            {SpriteType.Bird, "Assets/Animals/bird.png" },
+            {SpriteType.BirdFood, "Assets/Animals/birdfood.png" }
         };
-        
+
+        Image image;
         Texture2D texture;
         public float X { get; set; }
         public float Y { get; set; }
@@ -29,8 +40,10 @@ namespace Barcamp.Utilities
         public event Action? OnClick;
         public event Action<Vector2>? OnDrop;
 
-        public bool isDraggable;
+        public bool visible = true;
+        public bool isDraggable = false;
         private int visualX, visualY;
+        private float scale;
         private bool dragging;
 
         private float defaultWidth, defaultHeight;
@@ -42,25 +55,37 @@ namespace Barcamp.Utilities
 
         public void SetSprite(SpriteType type)
         {
-            texture = Raylib.LoadTextureFromImage(Raylib.LoadImage(paths[type]));
+            image = Raylib.LoadImage(paths[type]);
+            texture = Raylib.LoadTextureFromImage(image);
             defaultWidth = texture.Width;
             defaultHeight = texture.Height;
         }
 
         public void SetScale(float scale)
         {
+            this.scale = scale;
             texture.Width = (int)(defaultWidth * scale);
             texture.Height = (int)(defaultHeight * scale);
         }
 
+        public void Flip()
+        {
+            Raylib.ImageFlipHorizontal(ref image);
+            texture = Raylib.LoadTextureFromImage(image);
+            SetScale(scale);
+        }
+
         public void Draw()
         {
-            Raylib.DrawTexture(texture, visualX, visualY, Color.White);
+            if (visible)
+            {
+                Raylib.DrawTexture(texture, visualX, visualY, Color.White);
+            }
         }
 
         public void Update()
         {
-            if (dragging)
+            if (dragging && isDraggable)
             {
                 var mousePos = Raylib.GetMousePosition();
                 visualX = (int)mousePos.X;
@@ -76,7 +101,7 @@ namespace Barcamp.Utilities
         {
             if (dragging == false)
             {
-                if (isDraggable && Raylib.IsMouseButtonPressed(MouseButton.Left))
+                if (Raylib.IsMouseButtonPressed(MouseButton.Left))
                 {
                     var mousePos = Raylib.GetMousePosition();
                     if (Raylib.CheckCollisionPointRec(mousePos, new Rectangle(visualX, visualY, texture.Width, texture.Height)))
