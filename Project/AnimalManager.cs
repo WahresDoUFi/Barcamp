@@ -14,6 +14,7 @@ namespace Barcamp
             animals.Add(new Dog(scene));
             animals.Add(new Cat(scene));
             animals.Add(new Turtle(scene));
+            animals.Add(new Snake(scene));
         }
 
         //  This method will be called every frame

@@ -18,7 +18,6 @@ namespace Barcamp.Animals
             if (food is Turtlefood dogFood)
             {
                 hunger -= food.Eat();
-                food.amount--;
                 happiness += 1f;
                 SoundPlayer.Play(SoundType.Squeaking);
             }

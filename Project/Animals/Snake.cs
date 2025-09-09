@@ -3,36 +3,37 @@ using Barcamp.Utilities;
 
 namespace Barcamp.Animals
 {
-    internal class Cat : Animal
+    internal class Snake : Animal
     {
-        public Cat(Scene scene) : base(scene.AddSprite(SpriteType.Cat, 0.2f))
+        public Snake(Scene scene) : base(scene.AddSprite(SpriteType.Snake, 0.1f))
         {
+            sprite.Flip();
             sprite.isDraggable = false;
-            sprite.X = 850;
-            sprite.Y = 95;
+            sprite.X = 250;
+            sprite.Y = 650;
         }
 
         public override void Eat(Food food)
         {
             if (hunger < food.filling) return;
-            if (food is Dogfood dogFood)
+            if (food is Turtlefood dogFood)
             {
                 hunger -= food.Eat();
-                SoundPlayer.Play(SoundType.Meowing);
+                happiness += 3f;
+                SoundPlayer.Play(SoundType.Squeaking);
             }
         }
 
         public override void Pet()
         {
-            happiness++;
-            SoundPlayer.Play(SoundType.Meowing);
             sprite.Flip();
+            SoundPlayer.Play(SoundType.Hissing);
         }
 
         public override void Update()
         {
-            hunger += 0.1f;
-            happiness -= 0.05f;
+            hunger += 0.01f;
+            happiness -= 0.02f;
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Barcamp
     {
         protected Sprite sprite;
         public float filling { get; protected set; }
-        public float amount;
+        protected float amount;
         public Food(Sprite sprite, Action<Food, Vector2> dropCallback)
         {
             this.sprite = sprite;
